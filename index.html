@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="lang" content="es" />
+<meta name="copyright" content="Recetas de rechupete" />
+<meta http-equiv="Cache-Control" content="max-age=604800" />
+<meta property="fb:app_id" content="173302626060439" />
+<meta name="p:domain_verify" content="f4df72493385ac90eb712c1280e48824"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+
+	<link rel="image_src" href="https://www.#/wp-content/uploads/2018/11/Sopa-de-cebolla-2-copia.jpg"></link>
+	<meta name="thumbnail" content="https://www.#/wp-content/uploads/2018/11/Sopa-de-cebolla-2-copia.jpg"/>
+	
+	
+<script>
+        ( function() {
+          var insertAdsByGoogleJs = function() {
+            var element = document.createElement('script');
+            element.dataset.adClient = 'ca-pub-5565720241615247';
+            element.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+            element.async = true;
+            element.type = 'text/javascript';
+            document.getElementsByTagName('head')[0].appendChild(element);
+          };
+          // Run this in an interval (every 0.1s) just in case we are still waiting for consent
+          var cnt = 0;
+          var consentSetInterval = setInterval(function(){
+            cnt += 1;
+            // Bail if we have not gotten a consent response after 60 seconds.
+            if( cnt === 600 )
+              clearInterval(consentSetInterval);
+            if( typeof window.__tcfapi !== 'undefined' ) { // Check if window.__tcfapi has been set
+              clearInterval( consentSetInterval );
+              window.__tcfapi( 'addEventListener', 2, function( tcData,listenerSuccess ) {
+                if ( listenerSuccess ) {
+                  if( tcData.eventStatus === 'tcloaded' || tcData.eventStatus === 'useractioncomplete' ) {
+                    if ( !tcData.gdprApplies ) {
+                      // GDPR DOES NOT APPLY
+                      // Insert adsbygoogle.js onto the page.
+                      insertAdsByGoogleJs();
+                    }
+                    else {
+                      // GDPR DOES APPLY
+                      // Purpose 1 refers to the storage and/or access of information on a device.
+                      var hasStoreOnDeviceConsent = tcData.purpose.consents[1] || false;
+
+                      if (hasStoreOnDeviceConsent) {
+                      	insertAdsByGoogleJs();
+                      }
+                    }
+                  }
+                }
+              } );
+            }
+            cnt++;
+          }, 100);
+        })();
+</script>
+	
+<!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="text/javascript" async=true>
+(function() {
+  var host = window.location.hostname;
+  var element = document.createElement('script');
+  var firstScript = document.getElementsByTagName('script')[0];
+  var url = 'https://quantcast.mgr.consensu.org'
+    .concat('/choice/', '3f83_nKWrGcth', '/', host, '/choice.js')
+  var uspTries = 0;
+  var uspTriesLimit = 3;
+  element.async = true;
+  element.type = 'text/javascript';
+  element.src = url;
+
+  firstScript.parentNode.insertBefore(element, firstScript);
+
+  function makeStub() {
+    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+    var queue = [];
+    var win = window;
+    var cmpFrame;
+
+    function addFrame() {
+      var doc = win.document;
+      var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+      if (!otherCMP) {
+        if (doc.body) {
+          var iframe = doc.createElement('iframe');
+
+          iframe.style.cssText = 'display:none';
+          iframe.name = TCF_LOCATOR_NAME;
+          doc.body.appendChild(iframe);
+        } else {
+          setTimeout(addFrame, 5);
+        }
+      }
+      return !otherCMP;
+    }
+
+    function tcfAPIHandler() {
+      var gdprApplies;
+      var args = arguments;
+
+      if (!args.length) {
+        return queue;
+      } else if (args[0] === 'setGdprApplies') {
+        if (
+          args.length > 3 &&
+          args[2] === 2 &&
+          typeof args[3] === 'boolean'
+        ) {
+          gdprApplies = args[3];
+          if (typeof args[2] === 'function') {
+            args[2]('set', true);
+          }
+        }
+      } else if (args[0] === 'ping') {
+        var retr = {
+          gdprApplies: gdprApplies,
+          cmpLoaded: false,
+          cmpStatus: 'stub'
+        };
+
+        if (typeof args[2] === 'function') {
+          args[2](retr);
+        }
+      } else {
+        queue.push(args);
+      }
+    }
+
+    function postMessageEventHandler(event) {
+      var msgIsString = typeof event.data === 'string';
+      var json = {};
+
+      try {
+        if (msgIsString) {
+          json = JSON.parse(event.data);
+        } else {
+          json = event.data;
+        }
+      } catch (ignore) {}
+
+      var payload = json.__tcfapiCall;
+
+      if (payload) {
+        window.__tcfapi(
+          payload.command,
+          payload.version,
+          function(retValue, success) {
+            var returnMsg = {
+              __tcfapiReturn: {
+                returnValue: retValue,
+                success: success,
+                callId: payload.callId
+              }
+            };
+            if (msgIsString) {
+              returnMsg = JSON.stringify(returnMsg);
+            }
+            event.source.postMessage(returnMsg, '*');
+          },
+          payload.parameter
+        );
+      }
+    }
+
+    while (win) {
+      try {
+        if (win.frames[TCF_LOCATOR_NAME]) {
+          cmpFrame = win;
+          break;
+        }
+      } catch (ignore) {}
+
+      if (win === window.top) {
+        break;
+      }
+      win = win.parent;
+    }
+    if (!cmpFrame) {
+      addFrame();
+      win.__tcfapi = tcfAPIHandler;
+      win.addEventListener('message', postMessageEventHandler, false);
+    }
+  };
+
+  makeStub();
+
+  var uspStubFunction = function() {
+    var arg = arguments;
+    if (typeof window.__uspapi !== uspStubFunction) {
+      setTimeout(function() {
+        if (typeof window.__uspapi !== 'undefined') {
+          window.__uspapi.apply(window.__uspapi, arg);
+        }
+      }, 500);
+    }
+  };
+
+  var checkIfUspIsReady = function() {
+    uspTries++;
+    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+      console.warn('USP is not accessible');
+    } else {
+      clearInterval(uspInterval);
+    }
+  };
+
+  if (typeof window.__uspapi === 'undefined') {
+    window.__uspapi = uspStubFunction;
+    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+  }
+})();
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+
+<title>Sopa de cebolla. Receta tradicional francesa</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="Recetas de rechupete RSS Feed" href="https://www.#/feed/" />
+<link rel="pingback" href="https://www.#/xmlrpc.php" />
+<link rel="Shortcut Icon" href="derechupete/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="derechupete/style.css@1618912697.css" type="text/css" media="screen, projection" />
+<link rel="sitemap" href="https://www.#/sitemap_index.xml" />
+
+<!-- Principio COMSCORE -->
+<script> 
+ var _comscore = _comscore || [];
+ _comscore.push({ c1: "2", c2: "7715761", cs_ucfr: "1" });
+
+ (function() {
+ var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+ s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+ el.parentNode.insertBefore(s, el);
+ })();
+ </script>
+ <noscript><img src="https://sb.scorecardresearch.com/p?c1=2&amp;c2=7715761&amp;cs_ucfr=1&amp;cv=2.0&amp;cj=1" /></noscript>
+ <!-- Fin COMSCORE -->
+	
+<script data-mrf-script="garda" data-mrf-dt="1" data-mrf-host="live.mrf.io" data-mrf-ct="article" src="https://live.mrf.io/statics/marfeel/gardac-sync.js" data-cfasync="false"></script>
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v17.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="description" content="Cómo hacer sopa de cebolla. Receta francesa de su sopa más tradicional. Paso a paso con fotos, vídeo y consejos para que te salga perfecta." />
+	<link rel="canonical" href="index.html" />
+	<meta property="og:locale" content="es_ES" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Sopa de cebolla. Receta tradicional francesa" />
+	<meta property="og:description" content="Cómo hacer sopa de cebolla. Receta francesa de su sopa más tradicional. Paso a paso con fotos, vídeo y consejos para que te salga perfecta." />
+	<meta property="og:url" content="https://www.#/receta-tradicional-de-sopa-de-cebolla/2430/" />
+	<meta property="og:site_name" content="Recetas de rechupete" />
+	<meta property="article:publisher" content="https://www.facebook.com/recetasderechupetefanpage" />
+	<meta property="article:published_time" content="2021-09-09T06:31:00+00:00" />
+	<meta property="article:modified_time" content="2021-10-01T09:05:03+00:00" />
+	<meta property="og:image" content="https://www.#/wp-content/uploads/2018/11/Sopa-de-cebolla-2-copia.jpg" />
+	<meta property="og:image:width" content="1400" />
+	<meta property="og:image:height" content="966" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@derechupete" />
+	<meta name="twitter:site" content="@derechupete" />
+	<meta name="twitter:label1" content="Escrito por" />
+	<meta name="twitter:data1" content="Alfonso" />
+	<meta name="twitter:label2" content="Tiempo de lectura" />
+	<meta name="twitter:data2" content="5 minutos" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.#/#organization","name":"Recetas de rechupete","url":"https://www.#/","sameAs":["https://www.facebook.com/recetasderechupetefanpage","https://instagram.com/derechupete/","https://www.youtube.com/user/recetasderechupete","https://www.pinterest.es/derechupete/","https://twitter.com/derechupete"],"logo":{"@type":"ImageObject","@id":"https://www.#/#logo","inLanguage":"es","url":"https://www.#/wp-content/uploads/2016/03/logo_movil.png","contentUrl":"https://www.#/wp-content/uploads/2016/03/logo_movil.png","width":131,"height":34,"caption":"Recetas de rechupete"},"image":{"@id":"https://www.#/#logo"}},{"@type":"WebSite","@id":"https://www.#/#website","url":"https://www.#/","name":"Recetas de rechupete","description":"Recetas de cocina caseras y f\u00e1ciles","publisher":{"@id":"https://www.#/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.#/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"es"},{"@type":"ImageObject","@id":"https://www.#/receta-tradicional-de-sopa-de-cebolla/2430/#primaryimage","inLanguage":"es","url":"https://www.#/wp-content/uploads/2018/11/Sopa-de-cebolla-2-copia.jpg","contentUrl":"https://www.#/wp-content/uploads/2018/11/Sopa-de-cebolla-2-copia.jpg","width":1400,"height":966},{"@type":"WebPage","@id":"https://www.#/receta-tradicional-de-sopa-de-cebolla/2430/#webpage","url":"https://www.#/receta-tradicional-de-sopa-de-cebolla/2430/","name":"Sopa de cebolla. Receta tradicional francesa","isPartOf":{"@id":"https://www.#/#website"},"primaryImageOfPage":{"@id":"https://www.#/receta-tradicional-de-sopa-de-cebolla/2430/#primaryimage"},"datePublished":"2021-09-09T06:31:00+00:00","dateModified":"2021-10-01T09:05:03+00:00","description":"C\u00f3mo hacer sopa de cebolla. Receta francesa de su sopa m\u00e1s tradicional. Paso a paso con fotos, v\u00eddeo y consejos para que te salga perfecta.","breadcrumb":{"@id":"https://www.#/receta-tradicional-de-sopa-de-cebolla/2430/#breadcrumb"},"inLanguage":"es","potentialAction":[{"@type":"ReadAction","target":["https://www.#/receta-tradicional-de-sopa-de-cebolla/2430/"]}]},{"@type":"BreadcrumbList","@id":"https://www.#/receta-tradicional-de-sopa-de-cebolla/2430/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.#/"},{"@type":"ListItem","position":2,"name":"Recetas por tipo","item":"https://www.#/todas/recetas/"},{"@type":"ListItem","position":3,"name":"Recetas de sopas, caldos y cremas","item":"https://www.#/todas/recetas/recetas-de-sopas-y-caldos/"},{"@type":"ListItem","position":4,"name":"Sopa de cebolla. Receta tradicional francesa"}]},{"@type":"Person","@id":"https://www.#/#/schema/person/3701eebd8efa288d32fe0725942368fd","name":"Alfonso","sameAs":["https://www.#"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='https://www.#/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Recetas de rechupete &raquo; Comentario Sopa de cebolla. Receta tradicional francesa del feed" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.#\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8.1"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='dist/block-library/style.min.css@ver=5.8.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rating-form-cyto-css'  href='rating-form/assets/css/cyto.css@ver=1.5.9.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rating-form-css'  href='rating-form/assets/css/rating-form.css@ver=1.5.9.css' type='text/css' media='all' />
+<link rel='stylesheet' id='aawp-css'  href='aawp/assets/dist/css/main.css@ver=3.16.css' type='text/css' media='all' />
+<script type='text/javascript' src='jquery/jquery.min.js@ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='jquery/jquery-migrate.min.js@ver=3.3.2' id='jquery-migrate-js'></script>
+<link rel="https://api.w.org/" href="https://www.#/wp-json/" /><link rel="alternate" type="application/json" href="https://www.#/wp-json/wp/v2/posts/2430" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.#/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.#/wp-includes/wlwmanifest.xml" /> 
+<link rel='shortlink' href='https://www.#/?p=2430' />
+<link rel="alternate" type="application/json+oembed" href="https://www.#/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.#%2Freceta-tradicional-de-sopa-de-cebolla%2F2430%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.#/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.#%2Freceta-tradicional-de-sopa-de-cebolla%2F2430%2F&#038;format=xml" />
+<style type="text/css">.aawp .aawp-tb__row--highlight{background-color:#f5f7f7;}.aawp .aawp-tb__row--highlight{color:#175781;}.aawp .aawp-tb__row--highlight a{color:#175781;}</style><link rel="amphtml" href="amp/index.html">
+
+</head><body data-rsssl=1 >
+<!-- Google Tag Manager -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK67NG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TK67NG');</script>
+<!-- End Google Tag Manager -->
+
+<div class="rdr-content">	
+    <div class="rdr-top pure-g" role="banner">
+    	<a href="https://www.#/" title="Inicio" class="rdr-brand pure-u-1-3 pure-u-lg-1-5">
+		        <h2><img src="derechupete/img/logo.svg" alt="Recetas de rechupete"><span>Recetas de rechupete</span></h2>
+                </a>
+        <form class="rdr-searchform pure-u-2-3 pure-u-lg-4-5" role="search" method="get" action="https://www.#/" id="searchrecipes"><input type="search" name="s" id="query-input" placeholder="Busca recetas"><input type="submit" value="Buscar"></form>
+
+<div class="rdr-mainmenu pure-u-1"><ul id="menu-principal" class="menu" role="navigation" ><li id="menu-item-17335" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-17335"><a href="index.html#">Recetas de&#8230;</a>
+<ul class="sub-menu">
+	<li id="menu-item-17336" class="nav-postres menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17336"><a title="Recetas de postres y dulces" href="https://www.#/todas/recetas/postres-dulces/">Postres y dulces</a></li>
+	<li id="menu-item-17337" class="nav-pescado menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17337"><a title="Recetas de pescado y marisco" href="https://www.#/todas/recetas/pescados-mariscos/">Pescado y marisco</a></li>
+	<li id="menu-item-17338" class="nav-carne menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17338"><a title="Recetas de carnes y aves" href="https://www.#/todas/recetas/carnes-aves/">Carnes, pollo y otras aves</a></li>
+	<li id="menu-item-17346" class="nav-arroz menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17346"><a title="Recetas de arroz" href="https://www.#/todas/recetas/arroces/">Arroz</a></li>
+	<li id="menu-item-17345" class="nav-pasta menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17345"><a title="Recetas de pasta" href="https://www.#/todas/recetas/pasta-recetas/">Pasta</a></li>
+	<li id="menu-item-17339" class="nav-verduras menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17339"><a title="Recetas de ensaladas y verduras" href="https://www.#/todas/recetas/ensaladas-verduras/">Ensaladas y verduras</a></li>
+	<li id="menu-item-17340" class="nav-tapas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17340"><a title="Recetas de ensaladas y verduras" href="https://www.#/todas/recetas/tapas-aperitivos-pinchos/">Tapas y aperitivos</a></li>
+	<li id="menu-item-43555" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-43555"><a href="https://www.#/todas/recetas/recetas-de-sopas-y-caldos/">Sopas, caldos y cremas</a></li>
+	<li id="menu-item-17342" class="nav-sopas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17342"><a title="Recetas de guisos y legumbres" href="https://www.#/todas/recetas/legumbres-sopas-guisos/">Legumbres y guisos</a></li>
+	<li id="menu-item-17343" class="nav-masas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17343"><a title="Recetas de masas y rebozados" href="https://www.#/todas/recetas/masas-rebozados/">Pan, masas y rebozados</a></li>
+	<li id="menu-item-17344" class="nav-patatas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17344"><a title="Recetas de patatas, salsas y guarniciones" href="https://www.#/todas/recetas/patatas-salsas-guarniciones/">Patatas, salsas y guarniciones</a></li>
+	<li id="menu-item-17341" class="nav-especial menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-17341"><a title="Recetas para ocasiones especiales" href="https://www.#/todas/recetas/ocasiones-especiales/">Para ocasiones especiales</a></li>
+	<li id="menu-item-17347" class="nav-bebidas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17347"><a title="Recetas de bebidas, cócteles y licores" href="https://www.#/todas/recetas/bebidas-cocteles-licores/">Bebidas, cócteles y licores</a></li>
+</ul>
+</li>
+<li id="menu-item-27898" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-27898"><a href="https://www.#/todas/trucos-de-cocina/">Aprende a cocinar</a></li>
+<li id="menu-item-18586" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18586"><a href="https://www.#/recetas-de-pollo/">Recetas de pollo</a></li>
+<li id="menu-item-27899" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-27899"><a href="https://www.#/todas/general/">Actualidad gastronómica</a></li>
+<li id="menu-item-35282" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35282"><a href="https://www.#/recetas-faciles/">Recetas fáciles y baratas</a></li>
+</ul></div></div>    
+</div>
+<p id="breadcrumbs"><span><span><a href="https://www.#/">Inicio</a> » <span><a href="https://www.#/todas/recetas/">Recetas por tipo</a> » <span><a href="https://www.#/todas/recetas/recetas-de-sopas-y-caldos/">Recetas de sopas, caldos y cremas</a> » <span class="breadcrumb_last" aria-current="page">Sopa de cebolla. Receta tradicional francesa</span></span></span></span></span></p>
+
+<script type="application/ld+json" id="recipejson">
+	{
+		"@context": "http://schema.org",
+		"@type": "Recipe",
+		"mainEntityOfPage": {"@id": "https://www.#/receta-tradicional-de-sopa-de-cebolla/2430/"},
+		"author":{"@id":"https://www.#/#organization"},
+		"totalTime": "PT50M",
+		"datePublished": "2021-09-09",
+		"description": "Cómo hacer sopa de cebolla. Receta francesa de su sopa más tradicional. Paso a paso con fotos, vídeo y consejos para que te salga perfecta.",
+		"image": "https://www.#/wp-content/uploads/2018/11/Sopa-de-cebolla-2-copia.jpg",
+		"recipeIngredient": [ "6 cebollas grandes y dulces", "30 ml de aceite de oliva extra virgen (2 cucharadas)", "60 g de mantequilla", "1 diente de ajo", "2 litros de caldo de carne", "12 rebanadas de pan del tipo baguette", "3 cucharadas de harina de trigo", "1 cucharadita de azúcar", "Sal y pimienta negra recien molida (al gusto)", "20 ml de brandy o coñac", "100 g de queso rallado suave (tipo Gruyère)" ],
+		"name": "Sopa de cebolla. Receta tradicional francesa",
+		"nutrition": {
+			"@type": "NutritionInformation",
+			"calories": "230"
+		},
+		"recipeInstructions": [
+		{ "@type": "HowToStep", "text": "En esta sopa debemos emplear cebollas dulces, las encontraremos en el mercado o cualquier supermercado. Podéis emplear otro tipo de cebolla pero el sabor no será igual de suave y meloso."},{ "@type": "HowToStep", "text": "Pelamos y cortamos en juliana (a lo largo y en finísimas rodajas) las cebollas dulces. Reservamos en un cuenco."},{ "@type": "HowToStep", "text": "Elegimos una cazuela grande, calentamos el aceite en el fondo de la cazuela. Añadimos la mantequilla, que es la verdadera base de esta sopa francesa."},{ "@type": "HowToStep", "text": "Cuando se haya derretido y mezclado con el aceite de oliva introducimos las cebollas y el ajo muy picadito. Añadimos también un poco de sal y pimienta negra. El efecto salado nos ayudará a que las cebollas suden y que se ablanden antes."},{ "@type": "HowToStep", "text": "Removemos con una cuchara de madera de manera envolvente hasta que la cebolla quede transparente o translúcida, no debe coger color."},{ "@type": "HowToStep", "text": "Este proceso es lento porque queremos tener la cebolla blandita sin que se queme. Con fuego muy suave tardaremos unos 20-25 minutos. Podéis tapar o no la cazuela durante la cocción aunque si la tapáis el agua que va soltando el sofrito quedará en la cazuela y evitará que la cebolla tome color tostado."},{ "@type": "HowToStep", "text": "Si no hemos usado cebollas dulces en este momento podemos agregar una cucharada de azúcar. Aunque debemos tener cuidado de que no caramelice muy rápido para que la cebolla no quede con color."},{ "@type": "HowToStep", "text": "Espolvoreamos la harina en la cazuela y removemos con cuidado para mezclarla bien. El efecto de la harina con la cebolla y sobre todo la mantequilla se llama Roux, nos ayudará a ligar y espesar la sopa. Añadimos el brandy y dejamos 1-2 minutos que se evapore."},{ "@type": "HowToStep", "text": "Introducimos el caldo, de carne o de lo que más nos guste, por ejemplo pollo, pescado o verduras (así le daréis vuestro toque a la sopa). Salpimentamos si es necesario y llevamos a ebullición. Dejamos 15-20 minutos a fuego muy suave. La sopa tiene harina y si incrementamos la temperatura se irá al fondo de la cazuela. Se pegará pudiendo llegar a fastidiarnos la receta."},{ "@type": "HowToStep", "text": "Cortamos en rebanadas finas el pan y tostamos ligeramente. Untamos con un trozo de ajo y colocamos en la superficie de la cazuela o en cuencos individuales con la sopa y las tostadas por encima."},{ "@type": "HowToStep", "text": "Espolvoreamos con el queso suave que más nos guste (yo he utilizado gruyère). Metemos al horno precalentado a 200º C. Gratinamos a 220º C durante 5-6 minutos y servimos inmediatamente bien caliente."},{ "@type": "HowToStep", "text": "La elaboración de esta sopa es muy fácil, aunque puede que un poco laboriosa."},{ "@type": "HowToStep", "text": "Una sopa líquida pero con un punto de almidón que le da una textura entre sopa y crema, lo que le da a la sopa de cebolla ese toque único."},{ "@type": "HowToStep", "text": "Una receta digna tanto de un primer plato en la comida de Navidad como de una cena sencilla en estas noches de frío en las que sólo quieres estar con tu mantita en el sofá."},{ "@type": "HowToStep", "text": "Aquí os dejo otro vídeo por si queréis tener más ideas para preparar esta sopa de cebolla francesa."}],
+		"recipeYield": "6",
+		"recipeCategory": "Recetas de sopas, caldos y cremas",
+		"recipeCuisine": "francesa",
+		"keywords": "Fácil",
+		"estimatedCost": "0.8€/persona",
+
+		
+			"video" : [ {
+				"@type": "VideoObject",
+				"name": "Cómo preparar sopa de cebolla",
+				"description": "Cómo hacer sopa de cebolla. Receta francesa de su sopa más tradicional. Paso a paso con fotos, vídeo y consejos para que te salga perfecta.",
+				"thumbnailUrl": "https://i.ytimg.com/vi/s-wpJMft2yg/hqdefault.jpg",
+				"contentUrl" : "https://youtu.be/s-wpJMft2yg",
+				"embedUrl": "https://youtu.be/s-wpJMft2yg",
+				"uploadDate": "2021-09-09"
+			} ],
+
+		
+		"aggregateRating" : {
+			"@type": "AggregateRating",
+			"ratingValue": "3.5",
+			"reviewCount": "569"
+		}
+	}
+</script>
+
+<div id="container" class="pure-g rdr-content" role="main">
+	<div id="recipe" class="pure-u-1 pure-u-lg-2-3 rdr-flexorden2">
+
+		<article>
+			<section>
+				<header>
+					<h1>
+						Sopa de cebolla. Receta tradicional francesa					</h1>
+					<div class="rdr-eat">
+					<div>
+					<span class="rdr-tag">Fácil</span><span class="rdr-tag">50 min.</span><span class="rdr-tag">6 pers.</span><div data-rf-id="RF1P2430" class="rating_form_wrap rating_form_1">
+<style type="text/css">.rating_form_1 {text-align:left;}
+.rating_form_1 .rating_form .rf_item {color:#d2dee2;font-size:16px;}
+.rating_form_1 .rating_form .rf_item.hover {color:#b3340d;}
+.rating_form_1 .def {background-color:#f5f7f7;color:#576673;font-size:12px;}
+</style><div class="rating_form cursor user_rating">
+<span data-rating="1" class="rf_item cyto-star hover" title="La odio"></span><span data-rating="2" class="rf_item cyto-star hover" title="No me gusta"></span><span data-rating="3" class="rf_item cyto-star hover" title="Ni fu ni fa"></span><span data-rating="4" class="rf_item cyto-star-half hover" title="Qué buena pinta"></span><span data-rating="5" class="rf_item cyto-star" title="¡De rechupete!"></span><span class="rf_side"><span class="def rating_score"><span class="rf_average">3.5</span>/<span class="rf_max">5</span></span><span class="def rating_total"><span class="rf_count">569</span> votos</span></span></div>
+</div>
+					</div>
+					<p class="rdr-author">Por <a href="https://www.#/acercaderecetasderechupete/">Alfonso López</a> <img width="40" height="40" src="2020/11/AlfonsoLopez-768x768.jpg" class="rdr-avatar" alt="Alfonso López Alonso - Cocinero en #" loading="lazy" srcset="https://www.#/wp-content/uploads/2020/11/AlfonsoLopez-768x768.jpg 768w, https://www.#/wp-content/uploads/2020/11/AlfonsoLopez.jpg 800w" sizes="(max-width: 40px) 100vw, 40px" /></p>
+					</div>
+				</header>
+
+				<img width="738" height="509" src="2018/11/Sopa-de-cebolla-2-copia-768x530.jpg" class="mainphoto rdr-image wp-post-image" alt="Sopa de cebolla. Receta tradicional francesa" loading="lazy" srcset="https://www.#/wp-content/uploads/2018/11/Sopa-de-cebolla-2-copia-768x530.jpg 768w, https://www.#/wp-content/uploads/2018/11/Sopa-de-cebolla-2-copia.jpg 1400w" sizes="(max-width: 738px) 100vw, 738px" />				
+				<div id="extrainfo">
+					<ul>
+						<li>Precio: <strong>0.8 €/persona</strong></li><li>Calorías por 100g: <strong>230kcal</strong></li><li><a href="https://www.#/todas/recetas/recetas-de-sopas-y-caldos/" rel="category tag">Recetas de sopas, caldos y cremas</a> · <a href="https://www.#/todas/recetas/ocasiones-especiales/" rel="category tag">Recetas para ocasiones especiales</a></li>					</ul>
+				</div>
+
+				<div id="ingredients">
+					<h2>Ingredientes</h2>
+					<ul>
+						<li>6 cebollas grandes y dulces</li><li>30 ml de aceite de oliva extra virgen (2 cucharadas)</li><li>60 g de mantequilla</li><li>1 diente de ajo</li><li>2 litros de caldo de carne</li><li>12 rebanadas de pan del tipo baguette</li><li>3 cucharadas de harina de trigo</li><li>1 cucharadita de azúcar</li><li>Sal y pimienta negra recien molida (al gusto)</li><li>20 ml de brandy o coñac</li><li>100 g de queso rallado suave (tipo Gruyère)</li>					</ul>
+				</div>
+				
+
+				<div id="description">
+
+
+					
+<p><strong>Cómo preparar sopa de cebolla</strong>. Estamos casi en otoño y el invierno asoma a la vuelta de esquina, el cuerpo nos pide <strong><a href="https://www.#/todas/recetas/legumbres-sopas-guisos/">recetas de cuchara</a></strong>: sopas, cremas calientes, purés, cocidos, guisos, estofados y un largo etcétera. Si buscáis en el blog veréis que recetas de sopas tengo pocas o ninguna. Me he decidido a cambiar ésto comenzando con un clásico:<strong> «Sopa de cebolla a la francesa»</strong></p>
+
+
+
+<p>Una receta exquisita, tradicional y básica en cualquier cocina que se precie. Un plato delicioso y sencillo que puede ser un primer plato en Navidad&nbsp;o plato único con un gran cuenco de sopa en una cena casera. Imaginaos,&nbsp;en fusión con el&nbsp;sofá, calentando poco a poco las manos mientras ves tu serie o peli preferida, me dan ganas de tomarme otro cuenco más.</p>
+
+
+
+<p>Como casi todas las <strong><a href="http://recetasderechupete.hola.com/todas/legumbres-sopas-guisos/" target="_blank" rel="nofollow" noreferrer">recetas de sopa</a></strong>, esta&nbsp;tiene una gran historia, según el escritor de<strong><em> «Los&nbsp;tres mosqueteros»,</em> el francés Alexandre Dumas</strong>, era<em> “una sopa muy querida de los cazadores, gente de mala vida&nbsp;y venerada por los borrachos”.</em></p>
+
+
+
+<p>Como veis una receta económica del pueblo aunque fue Estanislao Leczinski. Antiguo rey de Polonia y apasionado de la gastronomía, el que descubrió esta sopa tradicional&nbsp;en una fonda francesa. Tanto le gustó su sabor delicado&nbsp;que no paró hasta hacerse con la receta. Desde ese momento adquirió fama y popularidad en la corte y más tarde se convirtió en el plato obligado con el que terminaban las juergas nocturnas parisinas, de ahí la cita de Dumas.</p>
+
+
+
+<p>Os dejo con la versión moderna de esta sopa originaria de Francia, hecha con pan seco, caldo de carne y cebollas caramelizadas. La “<strong>soupe á l’oignon gratinée</strong>” o <strong>sopa de cebolla gratinada</strong>, una variación de la receta&nbsp;de Paul Bocuse en el&nbsp; libro<em> «La cocina del mercado»</em>. <strong>Sencilla, humilde, sabrosa, nutritiva y saludable</strong>, espero que os guste tanto como a mí.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Cómo preparar sopa de cebolla" width="738" height="415" src="https://www.youtube.com/embed/s-wpJMft2yg?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<h3>Preparación de la sopa de cebolla</h3>
+
+
+
+<ol><li>En esta sopa debemos emplear cebollas dulces, las encontraremos en el mercado o cualquier supermercado. Podéis emplear otro tipo de cebolla pero el sabor no será igual de suave y meloso.</li><li>Pelamos y cortamos en juliana (a lo largo y en finísimas rodajas) las cebollas dulces. Reservamos en un cuenco.</li><li>Elegimos una cazuela grande, calentamos el aceite en el fondo de la cazuela. Añadimos la mantequilla, que es la verdadera base de esta sopa francesa.</li><li>Cuando se haya derretido y mezclado con el aceite de oliva introducimos las cebollas y el ajo muy picadito. Añadimos también un poco de sal y pimienta negra. El efecto salado nos ayudará a que las cebollas suden y que se ablanden antes.</li><li>Removemos con una cuchara de madera de manera envolvente hasta que la cebolla quede transparente o translúcida, no debe coger color.</li><li>Este proceso es lento porque queremos tener la cebolla blandita sin que se queme. Con fuego muy suave tardaremos unos 20-25 minutos. Podéis tapar o no la cazuela durante la cocción aunque si la tapáis el agua que va soltando el sofrito quedará en la cazuela y evitará que la cebolla tome color tostado.</li></ol>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1058" height="535" src="2020/04/Sopa-cebolla-1.png" alt="" class="wp-image-29661" srcset="https://www.#/wp-content/uploads/2020/04/Sopa-cebolla-1.png 1058w, https://www.#/wp-content/uploads/2020/04/Sopa-cebolla-1-768x388.png 768w" sizes="(max-width: 1058px) 100vw, 1058px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1004" height="365" src="2020/04/Sopa-cebolla-2.png" alt="" class="wp-image-29662" srcset="https://www.#/wp-content/uploads/2020/04/Sopa-cebolla-2.png 1004w, https://www.#/wp-content/uploads/2020/04/Sopa-cebolla-2-768x279.png 768w" sizes="(max-width: 1004px) 100vw, 1004px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="846" height="299" src="2020/04/Sopa-cebolla-3.png" alt="" class="wp-image-29663" srcset="https://www.#/wp-content/uploads/2020/04/Sopa-cebolla-3.png 846w, https://www.#/wp-content/uploads/2020/04/Sopa-cebolla-3-768x271.png 768w" sizes="(max-width: 846px) 100vw, 846px" /></figure>
+
+
+
+<h3>Preparación final de la sopa de cebolla y presentación</h3>
+
+
+
+<ol><li>Si no hemos usado cebollas dulces en este momento podemos agregar una cucharada de azúcar. Aunque debemos tener cuidado de que no caramelice muy rápido para que la cebolla no quede con color.</li><li>Espolvoreamos&nbsp;la harina en la cazuela y removemos con cuidado para mezclarla bien. El efecto de la harina con la cebolla y sobre todo la mantequilla se llama Roux, nos ayudará a ligar y espesar la sopa. Añadimos el brandy y dejamos 1-2 minutos que se evapore.</li><li>Introducimos el caldo, de carne o de lo que más nos guste, por ejemplo pollo, pescado o verduras (así le daréis vuestro toque a la sopa). Salpimentamos si es necesario y llevamos a ebullición. Dejamos 15-20 minutos a fuego muy suave. La sopa tiene harina y si incrementamos la temperatura se irá al fondo de la cazuela. Se pegará pudiendo llegar a fastidiarnos la receta.</li><li>Cortamos en rebanadas finas el pan y tostamos ligeramente. Untamos con un trozo de ajo y colocamos en la superficie de la cazuela o en cuencos individuales con la sopa y las tostadas por encima.</li><li>Espolvoreamos con el queso suave que más nos guste (yo he utilizado gruyère). Metemos al horno precalentado a 200º C. Gratinamos a 220º C durante 5-6 minutos y servimos inmediatamente bien caliente.</li></ol>
+
+
+
+<p>Podéis ver todas las fotos del paso a paso en la <strong><a href="https://www.flickr.com/photos/auguas/sets/72157713965004946" target="_blank" rel="nofollow" noopener">receta de sopa de cebolla francesa.</a> </strong>No perdáis detalle y saldrá perfecta.</p>
+
+
+
+<a data-flickr-embed="true"  href="https://www.flickr.com/photos/auguas/albums/72157713965004946" title="Galería de la receta"><img src="https://live.staticflickr.com/65535/47941865948_b6504ca2d9_b.jpg" width="100%" height="500" alt="Galería de la receta"></a><script async src="https://embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
+
+
+<h3>Recomendaciones para una sopa de cebolla de rechupete</h3>
+
+
+
+<ul><li>La elaboración de esta sopa es muy fácil, aunque puede que un poco laboriosa.</li><li>Una sopa líquida pero con un punto de almidón que le da una textura entre sopa y crema, lo que le da a la sopa de cebolla ese toque único.</li><li>Una receta digna tanto de un primer plato en la comida de Navidad como de una cena sencilla en estas noches de frío en las que sólo quieres estar con&nbsp;tu mantita en el sofá.</li><li>Aquí os dejo otro vídeo por si queréis tener más ideas para preparar esta sopa de cebolla francesa.</li></ul>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div itemscope itemtype="https://schema.org/VideoObject"><iframe loading="lazy" width="738" height="415" src="https://www.youtube.com/embed/pStjs2MOHXI?feature=oembed" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><meta itemprop="name" content="Sopa de Cebolla"><meta itemprop="description" content="En este breve y sencillo vídeo podréis ver Sopa de Cebolla"><link rel="image_src" itemprop="thumbnailUrl" href="https://i.ytimg.com/vi/pStjs2MOHXI/hqdefault.jpg"/><meta itemprop="uploadDate" content="2018-04-10T08:55:15+0000"/></div>
+</div></figure>
+
+
+				</div>
+
+				<div class="rdr-author-bio">
+	<h4>Por <a href="https://www.#/acercaderecetasderechupete/">Alfonso López</a></h4>
+	<p>Empecé # en 2009. En estos años he escrito recetas y libros, grabado vídeos, he dado cursos presenciales y clases en escuelas de hostelería. Y <strong>cocinar para mi familia y amigos</strong> sigue siendo mi gran pasión. En esta web quiero compartir contigo toda mi experiencia, para que disfrutes de la cocina tanto como yo y todos tus platos salgan de rechupete.</p>
+	<p><img width="104" height="104" src="2020/11/AlfonsoLopez-768x768.jpg" class="rdr-img-round-mini" alt="Alfonso López Alonso - Cocinero en #" loading="lazy" srcset="https://www.#/wp-content/uploads/2020/11/AlfonsoLopez-768x768.jpg 768w, https://www.#/wp-content/uploads/2020/11/AlfonsoLopez.jpg 800w" sizes="(max-width: 104px) 100vw, 104px" /></p>
+</div>
+<div id="sharerecipe">
+	<h3>¿Te ha gustado? ¡Compártelo!</h3>
+     <a href="https://www.facebook.com/sharer.php?u=https://www.#/receta-tradicional-de-sopa-de-cebolla/2430/&amp;t=Sopa&#32;de&#32;cebolla.&#32;Receta&#32;tradicional&#32;francesa" rel="nofollow" target="popup" onClick="window.open(this.href, this.target, 'width=600,height=600'); return false;" class="facebookshare sharebig"><i class="icon-facebook"></i> Compartir</a>
+    <a href="https://twitter.com/share?text=Sopa de cebolla. Receta tradicional francesa&url=https://www.#/receta-tradicional-de-sopa-de-cebolla/2430/&via=derechupete" rel="nofollow" target="popup" onClick="window.open(this.href, this.target, 'width=600,height=600'); return false;" class="twittershare sharebig"><i class="icon-twitter"></i> Twittear</a>
+    <a href="https://pinterest.com/pin/create/link/?url=https://www.#/receta-tradicional-de-sopa-de-cebolla/2430/&amp;media=https://www.#/wp-content/uploads/2018/11/Sopa-de-cebolla-2-copia.jpg&amp;description=Sopa&#32;de&#32;cebolla.&#32;Receta&#32;tradicional&#32;francesa" target="popup" onClick="window.open(this.href, this.target, 'width=600,height=600'); return false;" class="pinterestshare sharebig"><i class="icon-pinterest"></i> Pin it</a>
+      <a href="javascript:self.print()" rel="nofollow" title="Imprimir" class="printshare sharebig"><i class="icon-print"></i> Imprimir</a>    
+</div>				
+
+				<div id="custom_html-6" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div class="rdr-newsletter rdr-red-pattern">
+<p>Recibe un <a rel="nofollow noopener" href="https://us9.campaign-archive.com/home/?u=4467d9f996aa01ad3d7e6f1a1&#038;id=4f15bf6b9a" title="Ver ejemplos" target="_blank">email semanal</a> con las nuevas recetas y recomendaciones de rechupete.</p>
+<form action="https://recetasderechupete.us9.list-manage.com/subscribe/post?u=4467d9f996aa01ad3d7e6f1a1&amp;id=4f15bf6b9a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<label>Tu email<br />
+<input id="mce-EMAIL" class="required email" name="EMAIL" type="email" value="" /></label>
+<label>Tu nombre (opcional)<br />
+<input id="mce-FNAME" class="" name="FNAME" type="text" value="" /></label>
+<label><input type="radio" value="Acepto el tratamiento de mis datos descrito en la política de privacidad" name="MMERGE2" id="mce-MMERGE2-0"> Acepto el tratamiento de mis datos descrito en la <a href="https://www.#/politica-de-cookies/" target="_blank" rel="noopener">política de privacidad</a></label>
+<div id="mce-responses" class="clear"><div class="response" id="mce-error-response" style="display:none"></div><div class="response" id="mce-success-response" style="display:none"></div></div>
+<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--><div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4467d9f996aa01ad3d7e6f1a1_4f15bf6b9a" tabindex="-1" value=""></div>
+<p><input type="submit" value="Subscribirme" name="subscribe" id="mc-embedded-subscribe"></p>
+</form>
+<script>
+var rdrConsent = document.querySelector('input[id="mce-MMERGE2-0"]');
+var rdrSubmit = document.querySelector('input[id="mc-embedded-subscribe"]');
+rdrSubmit.disabled = true;
+rdrConsent.onchange = function() {
+  if(rdrConsent.checked) {
+    rdrSubmit.disabled = false;
+  } else {
+    rdrSubmit.disabled = true;
+  }
+};
+</script></div>
+<p class="rdr-legal" style="margin-top:1em;">
+Piensa en Pixels S.L como titular de #, usará los datos que proporciones en este formulario únicamente para enviarte las actualizaciones del blog. Tratamos tus datos con respeto. Para más información consulta la <a href="https://www.#/politica-de-cookies/"  rel="noopener">Política de privacidad</a>. Puedes cambiar de opinión en cualquier momento y desuscribirte haciendo clic en el pie de cualquier email que recibas de esta web, o contactando a hola@piensaenpixels.com. Recetas de rechupete usa Mailchimp como plataforma en envío de emails. Mailchimp está acogido al acuerdo EU-US Privacy Shield, aprobado por el Comité Europeo de Protección de Datos. Al enviar este formulario apruebas que tus datos sean transferidos a MailChimp para procesarlos de acuerdo a su <a href="https://mailchimp.com/legal/privacy/" target="_blank" rel="nofollow noopener">Política de Privacidad</a>.
+	</p></div></div>
+				<div id="relatedrecipe" role="complementary">
+					<h3>Si te ha gustado esta receta te gustar&aacute;:</h3>
+					<div>
+						<a href="https://www.#/sopa-de-verduras-en-juliana-receta-de-sopa-de-la-abuela/2927/" rel="bookmark" title="Ver Sopa de verduras en juliana. Sopa tradicional">
+							<img width="230" height="220" src="2019/10/Sopa-de-verduras-en-juliana-230x220.jpg" class="rdr-img-round-medium wp-post-image" alt="Sopa de verduras en juliana. Sopa tradicional" loading="lazy" />							<h4>
+								Sopa de verduras en juliana. Sopa tradicional							</h4>
+						</a>
+					
+					</div>
+
+					
+				</div>
+
+			</section>
+			<section>
+<div id="recipecomments" class="rdr-double-top"><a name="comments"></a>
+  <h3>Si te ha gustado esta receta o tienes alguna duda de c&oacute;mo hacerla deja un comentario</h3>
+          
+      <ol class="comments">
+      			<li class="comment even thread-even depth-1 parent" id="comment-2186">
+				<div id="div-comment-2186" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href='http://www.facebook.com/people/Elsa-Rouvire/1038252340' rel='external nofollow ugc' class='url'>Elsa Rouvière</a></cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-2186">31 octubre, 2010 a las 17:10</a>		</div>
+
+		<p>mmm, la sopa de cebolla es uno de mis platos favoritos, aunque en mi casa nunca la hemos gratinado, habrá que probarlo&#8230;<br />
+una cosa, ¿qué son cebollas dulces?</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-2186' data-commentid="2186" data-postid="2430" data-belowelement="div-comment-2186" data-respondelement="respond" data-replyto="Responder a Elsa Rouvière" aria-label='Responder a Elsa Rouvière'>Responder</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment odd alt depth-2" id="comment-9894">
+				<div id="div-comment-9894" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">ramón</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-9894">8 mayo, 2017 a las 18:17</a>		</div>
+
+		<p>En Aragón llamamos cebolla dulce a la de Fuentes de Ebro ( localidad lindante con el río Ebro ) famosas y con denominación de origen, y que no pican siendo su sabor dulce.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-2191">
+				<div id="div-comment-2191" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href='http://www.mimichelinteguia.blogspot.com' rel='external nofollow ugc' class='url'>Capitán Rinchetti</a></cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-2191">31 octubre, 2010 a las 23:35</a>		</div>
+
+		<p>Nunca la he probado, pero habrá que probar a hacerla: Saludos.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-2191' data-commentid="2191" data-postid="2430" data-belowelement="div-comment-2191" data-respondelement="respond" data-replyto="Responder a Capitán Rinchetti" aria-label='Responder a Capitán Rinchetti'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-2197">
+				<div id="div-comment-2197" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href='http://www.cocinandoconmicarmela.com' rel='external nofollow ugc' class='url'>luisa</a></cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-2197">1 noviembre, 2010 a las 12:16</a>		</div>
+
+		<p>Ufff  y  esta  si  que  me gusta  a  mi.  Me  encanta  y  te ha  quedado  genial.  Bss.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-2197' data-commentid="2197" data-postid="2430" data-belowelement="div-comment-2197" data-respondelement="respond" data-replyto="Responder a luisa" aria-label='Responder a luisa'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-2203">
+				<div id="div-comment-2203" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">mary</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-2203">1 noviembre, 2010 a las 20:39</a>		</div>
+
+		<p>benisimala sopa de cebolla</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-2203' data-commentid="2203" data-postid="2430" data-belowelement="div-comment-2203" data-respondelement="respond" data-replyto="Responder a mary" aria-label='Responder a mary'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-2320">
+				<div id="div-comment-2320" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Jose</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-2320">18 noviembre, 2010 a las 16:57</a>		</div>
+
+		<p>¿Sopa de cebolla con ajo? Me parece un poco extraño, la verdad. Puedes echarle muchas cosas a esta sopa &#8230; pero precisamente ajo no lo veo. Y en la foto veo que se os ha dorado la cebolla; es importante que esté blanqueada, no tostada. Ojo, maestro.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-2320' data-commentid="2320" data-postid="2430" data-belowelement="div-comment-2320" data-respondelement="respond" data-replyto="Responder a Jose" aria-label='Responder a Jose'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-auguas bypostauthor even thread-odd thread-alt depth-1" id="comment-2321">
+				<div id="div-comment-2321" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href='https://www.#/' rel='external nofollow ugc' class='url'>Alfonso</a></cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-2321">18 noviembre, 2010 a las 21:04</a>		</div>
+
+		<p>@Jose Mucha razón tienes, la cebolla se me paso un pelín, y el ajo&#8230;cosa de mi novia. Maestro de nada&#8230;cocinillas como muchos&#8230;jeje Muchas gracias por el comentario!!</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-2321' data-commentid="2321" data-postid="2430" data-belowelement="div-comment-2321" data-respondelement="respond" data-replyto="Responder a Alfonso" aria-label='Responder a Alfonso'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-2322">
+				<div id="div-comment-2322" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">marieta</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-2322">18 noviembre, 2010 a las 21:13</a>		</div>
+
+		<p>¿En qué momento debe añadirse el brandy?</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-2322' data-commentid="2322" data-postid="2430" data-belowelement="div-comment-2322" data-respondelement="respond" data-replyto="Responder a marieta" aria-label='Responder a marieta'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-auguas bypostauthor even thread-odd thread-alt depth-1" id="comment-2324">
+				<div id="div-comment-2324" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href='https://www.#/' rel='external nofollow ugc' class='url'>Alfonso</a></cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-2324">18 noviembre, 2010 a las 21:22</a>		</div>
+
+		<p>@Marieta, en el paso 5: 05. Espolvoreamos la harina en la cazuela y removemos con cuidado para mezclarla bien. El efecto de la harina con la cebolla y sobre todo la mantequilla se llama Roux, nos ayudará a ligar y espesar la sopa. Añadimos el brandy y dejamos 1-2 minutos que se evapore.<br />
+Espero que te salga bien rica!!</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-2324' data-commentid="2324" data-postid="2430" data-belowelement="div-comment-2324" data-respondelement="respond" data-replyto="Responder a Alfonso" aria-label='Responder a Alfonso'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-2375">
+				<div id="div-comment-2375" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Badila</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-2375">27 noviembre, 2010 a las 23:07</a>		</div>
+
+		<p>Deliciosa.En casa la hago mucho,es una receta heredada de mi padre,nacido y criado en Francia,y nunca falta en la mesa para la fechas navideñas.El la hacia exactamente igual,pero cuando no la gratinaba al final le daba un toque de nata,cuando la habia retirado del fuego.La hacia la víspera(gana mucho de un dia para otro) y despues de reclentarla era cuando añadia la nata.Utiltzaba queso Emmental.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-2375' data-commentid="2375" data-postid="2430" data-belowelement="div-comment-2375" data-respondelement="respond" data-replyto="Responder a Badila" aria-label='Responder a Badila'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-2377">
+				<div id="div-comment-2377" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href='http://cocinaenmislamarilla.blogspot.com/' rel='external nofollow ugc' class='url'>alcantarisa</a></cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-2377">28 noviembre, 2010 a las 16:12</a>		</div>
+
+		<p>¡Qué delicia Alfonso!<br />
+Yo la probé hace años, mi tía era una enamorada de esta sopa, la probó en un restaurante y ni corta ni perezosa, pidió la receta, y tan amables fueron, que se la dieron&#8230;<br />
+La verdad es que no me tentaba a mí mucho la idea de tomar sopa de cebolla, pero me gustó muchísimo su sabor, y hay que ver cómo llena!</p>
+<p>Gracias por compartir tu receta, a ver si me animo yo también a hacerla en casa.<br />
+Un abrazo.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-2377' data-commentid="2377" data-postid="2430" data-belowelement="div-comment-2377" data-respondelement="respond" data-replyto="Responder a alcantarisa" aria-label='Responder a alcantarisa'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-2809">
+				<div id="div-comment-2809" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Eduard</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-2809">15 enero, 2011 a las 18:31</a>		</div>
+
+		<p>Yo trabajaba en un restaurant y le ponian también una yema de huevo.<br />
+Increíblemente buena !!</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-2809' data-commentid="2809" data-postid="2430" data-belowelement="div-comment-2809" data-respondelement="respond" data-replyto="Responder a Eduard" aria-label='Responder a Eduard'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-2929">
+				<div id="div-comment-2929" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href='http://lacuinaderosa.blogspot.com/' rel='external nofollow ugc' class='url'>Rosa</a></cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-2929">3 febrero, 2011 a las 15:40</a>		</div>
+
+		<p>Me ha encantado tu página y esta receta en especial, me has recordado a la sopa que prepara mi madre. Riquísima. Eres todo un artista.<br />
+Besos y hasta pronto.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-2929' data-commentid="2929" data-postid="2430" data-belowelement="div-comment-2929" data-respondelement="respond" data-replyto="Responder a Rosa" aria-label='Responder a Rosa'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-3297">
+				<div id="div-comment-3297" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href='http://cuentosmitosyleyendas.com' rel='external nofollow ugc' class='url'>pamela</a></cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-3297">22 marzo, 2011 a las 20:47</a>		</div>
+
+		<p>yo ha hize esta sopa mi esposo se tomó cuatro platos le encantó y a mi también.  felicidades</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-3297' data-commentid="3297" data-postid="2430" data-belowelement="div-comment-3297" data-respondelement="respond" data-replyto="Responder a pamela" aria-label='Responder a pamela'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-3456">
+				<div id="div-comment-3456" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">alvarocanaviri</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-3456">4 abril, 2011 a las 23:03</a>		</div>
+
+		<p>muy buena y practica</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-3456' data-commentid="3456" data-postid="2430" data-belowelement="div-comment-3456" data-respondelement="respond" data-replyto="Responder a alvarocanaviri" aria-label='Responder a alvarocanaviri'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-3497">
+				<div id="div-comment-3497" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href='http://no' rel='external nofollow ugc' class='url'>Juan</a></cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-3497">15 abril, 2011 a las 3:18</a>		</div>
+
+		<p>Excelente y sencilla:&#8230;. Juan</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-3497' data-commentid="3497" data-postid="2430" data-belowelement="div-comment-3497" data-respondelement="respond" data-replyto="Responder a Juan" aria-label='Responder a Juan'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-3630">
+				<div id="div-comment-3630" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">malu</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-3630">13 abril, 2016 a las 15:05</a>		</div>
+
+		<p>bueno, la verdad siempre me ha encantado esta sopa, pero  entiendo que el color depende del gusto del consumidor  y se puede tornar o tomar diferentes tonos tanto de la cebolla como de la harina,lo importante es no dejarla quemar solo dorar en el tono que se prefiera</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-3630' data-commentid="3630" data-postid="2430" data-belowelement="div-comment-3630" data-respondelement="respond" data-replyto="Responder a malu" aria-label='Responder a malu'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-4663">
+				<div id="div-comment-4663" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Teresa Astroza Salas</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-4663">31 julio, 2016 a las 19:20</a>		</div>
+
+		<p>Mmmm Rica queda expectacular me facina tienen que hacerla y les va encantar en un dia de frio o lluvia viene muy bien</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-4663' data-commentid="4663" data-postid="2430" data-belowelement="div-comment-4663" data-respondelement="respond" data-replyto="Responder a Teresa Astroza Salas" aria-label='Responder a Teresa Astroza Salas'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-4682">
+				<div id="div-comment-4682" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Lourdes</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-4682">1 agosto, 2016 a las 22:06</a>		</div>
+
+		<p>Buenísima!  La acabo de hacer!!</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-4682' data-commentid="4682" data-postid="2430" data-belowelement="div-comment-4682" data-respondelement="respond" data-replyto="Responder a Lourdes" aria-label='Responder a Lourdes'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-4719">
+				<div id="div-comment-4719" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Mariely</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-4719">4 agosto, 2016 a las 18:43</a>		</div>
+
+		<p>La prepare es riquísima. Y fácil gracias</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-4719' data-commentid="4719" data-postid="2430" data-belowelement="div-comment-4719" data-respondelement="respond" data-replyto="Responder a Mariely" aria-label='Responder a Mariely'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-4720">
+				<div id="div-comment-4720" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Mariely</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-4720">4 agosto, 2016 a las 18:46</a>		</div>
+
+		<p>Deliciosa la prepare hoy  gracias</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-4720' data-commentid="4720" data-postid="2430" data-belowelement="div-comment-4720" data-respondelement="respond" data-replyto="Responder a Mariely" aria-label='Responder a Mariely'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-4776">
+				<div id="div-comment-4776" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">María Alvarado</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-4776">10 agosto, 2016 a las 15:39</a>		</div>
+
+		<p>Suena bien, pero sigo prefiriendo la comida mexicana! Que si el pozole, las enchiladas, la sopa de tortilla, hay mucho para elegir. No conozco a ningún extranjero que no le guste lo que ha probado aquí, no por nada es patrimonio de la humanidad.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-4776' data-commentid="4776" data-postid="2430" data-belowelement="div-comment-4776" data-respondelement="respond" data-replyto="Responder a María Alvarado" aria-label='Responder a María Alvarado'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-4801">
+				<div id="div-comment-4801" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Xenia Soikes</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-4801">14 agosto, 2016 a las 0:40</a>		</div>
+
+		<p>Alfonso, gracias la preparé y salió maravillosa.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-4801' data-commentid="4801" data-postid="2430" data-belowelement="div-comment-4801" data-respondelement="respond" data-replyto="Responder a Xenia Soikes" aria-label='Responder a Xenia Soikes'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-4829">
+				<div id="div-comment-4829" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Luis Fernando Yanguas</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-4829">17 agosto, 2016 a las 4:46</a>		</div>
+
+		<p>Desde Cali, Colombia , la acabo de hacer , tal cual nos han ilustrado en Rechupete . El secreto está en el caldo . Le he agregado un poco , bien poco de estragón y ha quedado exquisita . Gracias por enseñarnos. Saludos</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-4829' data-commentid="4829" data-postid="2430" data-belowelement="div-comment-4829" data-respondelement="respond" data-replyto="Responder a Luis Fernando Yanguas" aria-label='Responder a Luis Fernando Yanguas'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-5634">
+				<div id="div-comment-5634" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Conchi</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-5634">17 octubre, 2016 a las 12:05</a>		</div>
+
+		<p>Buenisimaaa!!!! La he hecho pero yo la he gratinado en el horno..estoy encantada&#8230;.y mi marido&#8230;que es bastante reacio a las sopas cremas pures  etc&#8230; le ha fascinado. Mil gracias Alfonso. Se la recomiendo a todo el mundo, es una sopa fantástica.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-5634' data-commentid="5634" data-postid="2430" data-belowelement="div-comment-5634" data-respondelement="respond" data-replyto="Responder a Conchi" aria-label='Responder a Conchi'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-6094">
+				<div id="div-comment-6094" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Chus</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-6094">10 noviembre, 2016 a las 18:17</a>		</div>
+
+		<p>Las cebollas actúan estimulando las secreciones, favoreciendo la digestión, abriendo el apetito, como diuréticas, cicatrizantes y como excelente profiláctico contra la gripe, el catarro, la amigdalitis y la tos. Un remedio muy común contra la tos de los niños es picar muy finamente cebollas frescas y añadirlo a leche y miel, lo cual se toma a modo de jarabe.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-6094' data-commentid="6094" data-postid="2430" data-belowelement="div-comment-6094" data-respondelement="respond" data-replyto="Responder a Chus" aria-label='Responder a Chus'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-6308">
+				<div id="div-comment-6308" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">ana garcia</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-6308">30 noviembre, 2016 a las 19:02</a>		</div>
+
+		<p>Sencillamente deliciosa. Gracias por compartir.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-6308' data-commentid="6308" data-postid="2430" data-belowelement="div-comment-6308" data-respondelement="respond" data-replyto="Responder a ana garcia" aria-label='Responder a ana garcia'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-6492">
+				<div id="div-comment-6492" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Fátima Covo</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-6492">12 diciembre, 2016 a las 15:34</a>		</div>
+
+		<p>Madre mía que buena me ha quedado Alfonso. Oficialmente es mi sopa de cebolla preferida.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-6492' data-commentid="6492" data-postid="2430" data-belowelement="div-comment-6492" data-respondelement="respond" data-replyto="Responder a Fátima Covo" aria-label='Responder a Fátima Covo'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-6945">
+				<div id="div-comment-6945" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">María Teresa</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-6945">10 enero, 2017 a las 18:00</a>		</div>
+
+		<p>Muy sabrosa esta sopa. La preparé con vino blanco porque no tenía brandy. Y sale también muy bien, gracias.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-6945' data-commentid="6945" data-postid="2430" data-belowelement="div-comment-6945" data-respondelement="respond" data-replyto="Responder a María Teresa" aria-label='Responder a María Teresa'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-6946">
+				<div id="div-comment-6946" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Juana Castro</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-6946">10 enero, 2017 a las 18:32</a>		</div>
+
+		<p>Alfonso, me encanta todas tus recetas. Eres un buen cocinero. Sigue así!</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-6946' data-commentid="6946" data-postid="2430" data-belowelement="div-comment-6946" data-respondelement="respond" data-replyto="Responder a Juana Castro" aria-label='Responder a Juana Castro'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-7100">
+				<div id="div-comment-7100" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Lino Calle</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-7100">18 enero, 2017 a las 13:12</a>		</div>
+
+		<p>me ha gustado la receta.La voy a probar pero estoy seguro de que serábue4na y me recordará la que hacía mi desagradable cuñada francesa. Gracias</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-7100' data-commentid="7100" data-postid="2430" data-belowelement="div-comment-7100" data-respondelement="respond" data-replyto="Responder a Lino Calle" aria-label='Responder a Lino Calle'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-7118">
+				<div id="div-comment-7118" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Maribel</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-7118">19 enero, 2017 a las 15:20</a>		</div>
+
+		<p>Yo la preparo con aceite de oliva y en vez de harina le pongo una patata pequeña, y le pongo vino en vez de brandy, la paso por la batidora y el resto igual con queso Emmental.  así la comí en Francia, debe ser como aquí la paella, que en cada zona la preparan de diferente manera.  voy a probar con el brandy y la harina.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-7118' data-commentid="7118" data-postid="2430" data-belowelement="div-comment-7118" data-respondelement="respond" data-replyto="Responder a Maribel" aria-label='Responder a Maribel'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-7121">
+				<div id="div-comment-7121" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Rocío Ivonne</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-7121">19 enero, 2017 a las 16:44</a>		</div>
+
+		<p>Sencilla y deliciosa :-))<br />
+Muchíssimas gracias por compartir!!<br />
+Saludos</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-7121' data-commentid="7121" data-postid="2430" data-belowelement="div-comment-7121" data-respondelement="respond" data-replyto="Responder a Rocío Ivonne" aria-label='Responder a Rocío Ivonne'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-10186">
+				<div id="div-comment-10186" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Claudia Andrea</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-10186">21 mayo, 2017 a las 21:11</a>		</div>
+
+		<p>Gracias. Me quedo muy buena. Contundente y sabrosa, a todos les ha gustado en casa.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-10186' data-commentid="10186" data-postid="2430" data-belowelement="div-comment-10186" data-respondelement="respond" data-replyto="Responder a Claudia Andrea" aria-label='Responder a Claudia Andrea'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-15897">
+				<div id="div-comment-15897" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Maria Elena Quintero</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-15897">29 enero, 2018 a las 1:36</a>		</div>
+
+		<p>Maravillosa receta y sus comentarios muy acertados y necesarios. La hice y quedo riquísima. Felicitaciones y gracias por compartir</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-15897' data-commentid="15897" data-postid="2430" data-belowelement="div-comment-15897" data-respondelement="respond" data-replyto="Responder a Maria Elena Quintero" aria-label='Responder a Maria Elena Quintero'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-15934">
+				<div id="div-comment-15934" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">rosa epelman alfano</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-15934">31 enero, 2018 a las 10:45</a>		</div>
+
+		<p>POR FAVOR ACLAREN QUE SON LAS GRELAS Y EL UNTO NO LAS CONOZCO POR ESE NOMBRE NO SE LO QUE  SON QUIZAS TIENEN NOMBRES ALTERNATIVOS Y SE CONOCEN DE OTRA FORMA</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-15934' data-commentid="15934" data-postid="2430" data-belowelement="div-comment-15934" data-respondelement="respond" data-replyto="Responder a rosa epelman alfano" aria-label='Responder a rosa epelman alfano'>Responder</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-auguas bypostauthor even depth-2" id="comment-15963">
+				<div id="div-comment-15963" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href='https://www.#/' rel='external nofollow ugc' class='url'>Alfonso</a></cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-15963">1 febrero, 2018 a las 12:24</a>		</div>
+
+		<p>Hola Rosa! Claro, sin problema. Los grelos también llamado broccoli rabe, broccoletti, broccoli di rape, cumbre di rapa, Rapp o friarielli (en Nápoles) son una verdura muy presente en la cocina gallega, asturiana, italiana y portuguesa. Es el brote del nabo en cuyo extremo aparecerán las flores.<br />
+El unto es grasa de cerdo un poco rancia, para dar sustancia al caldo gallego, se emplea en Galicia en multitud de recetas.<br />
+Espero que te haya servido de ayuda. Un saludo</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-16024">
+				<div id="div-comment-16024" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Eva</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-16024">3 febrero, 2018 a las 14:21</a>		</div>
+
+		<p>Riquísima, la he preparado con vermut, por falta de brandy y con harina de espelta, y así no tenemos problemas con el gluten.<br />
+Super!</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-16024' data-commentid="16024" data-postid="2430" data-belowelement="div-comment-16024" data-respondelement="respond" data-replyto="Responder a Eva" aria-label='Responder a Eva'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-16613">
+				<div id="div-comment-16613" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">JUAN RAFAEL CELESTINO</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-16613">24 febrero, 2018 a las 0:33</a>		</div>
+
+		<p>La he comido en restaurante Toks. Riquísima. Es lo que me ha impulsado a conseguir la receta. Mi esposa está lista para prepararla. Espero que le salga igual de sabrosa pues es una de mis preferidas. La probaré con tu receta y que Dios me permita que resulte así de rica.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-16613' data-commentid="16613" data-postid="2430" data-belowelement="div-comment-16613" data-respondelement="respond" data-replyto="Responder a JUAN RAFAEL CELESTINO" aria-label='Responder a JUAN RAFAEL CELESTINO'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-16649">
+				<div id="div-comment-16649" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Saulo H Patiño</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-16649">24 febrero, 2018 a las 23:17</a>		</div>
+
+		<p>Sopa de cebolla con la Receta tradicional francesa, es una delicia.<br />
+Gracias por compartir la receta</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-16649' data-commentid="16649" data-postid="2430" data-belowelement="div-comment-16649" data-respondelement="respond" data-replyto="Responder a Saulo H Patiño" aria-label='Responder a Saulo H Patiño'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-17069">
+				<div id="div-comment-17069" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Sergio</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-17069">10 marzo, 2018 a las 21:23</a>		</div>
+
+		<p>He preparado la sopa utilizando para el caldo la salsa que me sobró del rabo de toro, y ha sido una verdadera fiesta para toda la familia. He tenido dificultades porque he usado una cazuela de barro, por lo que la harina se me ha adherido al fondo directamente (nada crítico, a todo esto).<br />
+La sopa ha salido infinitamente mejor que las que hasta ahora he probado aquín en los Países Bajos (muy popular aquí, por cierto).<br />
+Una delicia. Gracias mil!</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-17069' data-commentid="17069" data-postid="2430" data-belowelement="div-comment-17069" data-respondelement="respond" data-replyto="Responder a Sergio" aria-label='Responder a Sergio'>Responder</a></div>
+				</div>
+				<ul class="children">
+		<li class="comment byuser comment-author-auguas bypostauthor odd alt depth-2" id="comment-17125">
+				<div id="div-comment-17125" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href='https://www.#/' rel='external nofollow ugc' class='url'>Alfonso</a></cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-17125">12 marzo, 2018 a las 11:17</a>		</div>
+
+		<p>Sergio, juegas con ventaja&#8230;. jajaja Con ese caldo estoy seguro que cualquier sopa se convierte en delicatessen</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-17876">
+				<div id="div-comment-17876" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Rosy</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-17876">8 abril, 2018 a las 23:51</a>		</div>
+
+		<p>Que maravilla de sopa. Justamente la probé en París hace un año, y estaba deseando encontrar una buen receta, auténticamente francesa vaya&#8230; Voy a intentar hacerla y ya te comentaré el resultado. Muchas gracias por esta receta y otras que también he leído en tu blog. Un saludo desde Tenerife.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-17876' data-commentid="17876" data-postid="2430" data-belowelement="div-comment-17876" data-respondelement="respond" data-replyto="Responder a Rosy" aria-label='Responder a Rosy'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-17920">
+				<div id="div-comment-17920" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Andre Morales</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-17920">11 abril, 2018 a las 2:25</a>		</div>
+
+		<p>Esta es una muy buena receta, muy rica sopa. Yo le doy un 10/10.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-17920' data-commentid="17920" data-postid="2430" data-belowelement="div-comment-17920" data-respondelement="respond" data-replyto="Responder a Andre Morales" aria-label='Responder a Andre Morales'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-18729">
+				<div id="div-comment-18729" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">YOLANDA</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-18729">17 mayo, 2018 a las 19:00</a>		</div>
+
+		<p>Buenas noches!&#8230; la acabo de hacer. ESTUPENDA!!! Mil gracias.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-18729' data-commentid="18729" data-postid="2430" data-belowelement="div-comment-18729" data-respondelement="respond" data-replyto="Responder a YOLANDA" aria-label='Responder a YOLANDA'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-20146">
+				<div id="div-comment-20146" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">maria cristina</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-20146">1 septiembre, 2018 a las 1:41</a>		</div>
+
+		<p>la hice recièn, excelente. los felicito</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-20146' data-commentid="20146" data-postid="2430" data-belowelement="div-comment-20146" data-respondelement="respond" data-replyto="Responder a maria cristina" aria-label='Responder a maria cristina'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-23294">
+				<div id="div-comment-23294" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">David</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-23294">15 marzo, 2019 a las 18:59</a>		</div>
+
+		<p>la hize con pescado, uma delicia</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-23294' data-commentid="23294" data-postid="2430" data-belowelement="div-comment-23294" data-respondelement="respond" data-replyto="Responder a David" aria-label='Responder a David'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-35091">
+				<div id="div-comment-35091" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Raul</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-35091">18 noviembre, 2019 a las 20:39</a>		</div>
+
+		<p>Una receta rica. Yo suelo poner el pan en el horno con queso y luego lo coloco encima del caldo así aguanta entero más tiempo.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-35091' data-commentid="35091" data-postid="2430" data-belowelement="div-comment-35091" data-respondelement="respond" data-replyto="Responder a Raul" aria-label='Responder a Raul'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-54461">
+				<div id="div-comment-54461" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">REMY</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-54461">23 marzo, 2020 a las 16:29</a>		</div>
+
+		<p>Elaboré la sopa de cebolla tal cual dice tu receta y quedó buenísima. Muchas gracias.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-54461' data-commentid="54461" data-postid="2430" data-belowelement="div-comment-54461" data-respondelement="respond" data-replyto="Responder a REMY" aria-label='Responder a REMY'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-82046">
+				<div id="div-comment-82046" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Evangelina</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-82046">18 julio, 2020 a las 20:38</a>		</div>
+
+		<p>En este tiempo de covid, estoy preparando muchas recetas y esta sopa me la debia!!!!</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-82046' data-commentid="82046" data-postid="2430" data-belowelement="div-comment-82046" data-respondelement="respond" data-replyto="Responder a Evangelina" aria-label='Responder a Evangelina'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-95949">
+				<div id="div-comment-95949" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Edgar Moncada</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-95949">15 septiembre, 2020 a las 16:49</a>		</div>
+
+		<p>gracias muy buena receta y excelente pagina, exitos, slds</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-95949' data-commentid="95949" data-postid="2430" data-belowelement="div-comment-95949" data-respondelement="respond" data-replyto="Responder a Edgar Moncada" aria-label='Responder a Edgar Moncada'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-96339">
+				<div id="div-comment-96339" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Víctor Lozada</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-96339">17 septiembre, 2020 a las 0:11</a>		</div>
+
+		<p>La prepare según la receta y me impresionó su sabor tipo gourmet, además la acompañé con un Remy Martin. Delicioso, gracias por la receta Alfonso.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-96339' data-commentid="96339" data-postid="2430" data-belowelement="div-comment-96339" data-respondelement="respond" data-replyto="Responder a Víctor Lozada" aria-label='Responder a Víctor Lozada'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-127212">
+				<div id="div-comment-127212" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">María</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-127212">30 enero, 2021 a las 20:10</a>		</div>
+
+		<p>Sin duda la sopa de cebolla más deliciosa que he probado. Mi esposo, quien hace alarde de ser un gran conocedor de sopas de cebolla, se qedó deleitado con mi sopa. Y eso que llevo más de 50 años de preparar sopas (53 de matrimonio). Por otra parte las instrucciones para la preparación que das son muy claras y sólo hay que seguirlas, éxito asegurado. Muchas gracias Alfonso.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-127212' data-commentid="127212" data-postid="2430" data-belowelement="div-comment-127212" data-respondelement="respond" data-replyto="Responder a María" aria-label='Responder a María'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-131068">
+				<div id="div-comment-131068" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Wilson</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-131068">27 mayo, 2021 a las 23:53</a>		</div>
+
+		<p>Tremenda sopa, era mi preferida cuando era joven, despues de las rumbas, amaneciendo con una sopa de cebolla, especial para la resaca (o raton decimos en Venezuela).</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-131068' data-commentid="131068" data-postid="2430" data-belowelement="div-comment-131068" data-respondelement="respond" data-replyto="Responder a Wilson" aria-label='Responder a Wilson'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-135071">
+				<div id="div-comment-135071" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Matilde</cite> <span class="says">dice:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="index.html#comment-135071">15 septiembre, 2021 a las 16:21</a>		</div>
+
+		<p>Tu sopa de cebolla es gloriosa, triunfa en casa siempre, ayer la hicimos y mis hijas me han dicho que te deje un comentario&#8230; Gracias!!!!</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='index.html#comment-135071' data-commentid="135071" data-postid="2430" data-belowelement="div-comment-135071" data-respondelement="respond" data-replyto="Responder a Matilde" aria-label='Responder a Matilde'>Responder</a></div>
+				</div>
+				</li><!-- #comment-## -->
+      </ol>
+ 
+	<div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+		<meta itemprop="interactionType" content="https://schema.org/CommentAction" />
+		<meta itemprop="userInteractionCount" content="55" />
+	</div>
+  
+	        <div id="comments" role="form">                           
+          
+        	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Deja una respuesta <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancelar la respuesta</a></small></h3><form action="https://www.#/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Tu dirección de correo electrónico no será publicada.</span> Los campos obligatorios están marcados con <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comentario</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Nombre <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Correo electrónico <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Web</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Publicar el comentario" /> <input type='hidden' name='comment_post_ID' value='2430' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="992b654d32" /></p><p style="display: none !important;"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js" name="ak_js" value="145"/><script>document.getElementById( "ak_js" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
+	<p class="akismet_comment_form_privacy_notice">Este sitio usa Akismet para reducir el spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Aprende cómo se procesan los datos de tus comentarios</a>.</p>        
+        </div>
+             
+
+          
+   
+   </div>
+</section>
+		</article>
+	</div>
+
+		<aside class="pure-u-1 pure-u-lg-1-3 rdr-flexorden1">
+<div id="navcontent">
+    
+	<div id="nav_menu-9" class="widget widget_nav_menu"><h3 class="widget-title">Hoy se habla de&#8230;</h3><div class="menu-modulos-hoy-se-habla-de-container"><ul id="menu-modulos-hoy-se-habla-de" class="menu"><li id="menu-item-43678" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-43678"><a href="https://www.#/todas/recetas/carnes-aves/recetas-con-pollo/">Recetas con pollo</a></li>
+<li id="menu-item-43679" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-43679"><a href="https://www.#/todas/recetas/legumbres-sopas-guisos/recetas-con-garbanzos/">Recetas con garbanzos</a></li>
+<li id="menu-item-43463" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-43463"><a href="https://www.#/receta-de-lentejas-caseras-con-chorizo/939/">Lentejas con chorizo</a></li>
+<li id="menu-item-43677" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-43677"><a href="https://www.#/receta-de-lentejas-light-al-estilo-tradicional/938/">Lentejas con verduras</a></li>
+<li id="menu-item-43465" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-43465"><a href="https://www.#/crema-de-calabaza-y-curry/6628/">Crema de calabaza</a></li>
+<li id="menu-item-43559" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-43559"><a href="https://www.#/receta-de-tortitas/11/">Tortitas</a></li>
+<li id="menu-item-39641" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-39641"><a href="https://www.#/receta-facil-de-tarta-de-queso/158/">Tarta de queso</a></li>
+<li id="menu-item-42586" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-42586"><a href="https://www.#/galletas-de-avena/11370/">Galletas de avena</a></li>
+<li id="menu-item-41939" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-41939"><a href="https://www.#/bizcocho-casero-de-yogur/10463/">Bizcocho de yogur</a></li>
+</ul></div></div><div id="custom_html-5" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div class="rdr-newsletter rdr-red-pattern">
+	<p>Recibe un email semanal con las nuevas recetas de rechupete.</p>
+	<a href="https://www.#/suscribete-a-recetas-de-rechupete/" class="buttonlink">Suscríbete</a></div></div></div><div id="nav_menu-3" class="widget widget_nav_menu"><h3 class="widget-title">Recetas</h3><div class="menu-recetas-container"><ul id="menu-recetas" class="menu"><li id="menu-item-20176" class="nav-indice menu-item menu-item-type-post_type menu-item-object-page menu-item-20176"><a href="https://www.#/indice-de-recetas/">Recetas por orden alfabético</a></li>
+<li id="menu-item-20159" class="nav-postres menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20159"><a href="https://www.#/todas/recetas/postres-dulces/">Postres y dulces</a></li>
+<li id="menu-item-20170" class="nav-arroz menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20170"><a href="https://www.#/todas/recetas/arroces/">Arroz</a></li>
+<li id="menu-item-20168" class="nav-pasta menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20168"><a href="https://www.#/todas/recetas/pasta-recetas/">Pasta</a></li>
+<li id="menu-item-20161" class="nav-carne menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20161"><a href="https://www.#/todas/recetas/carnes-aves/">Carnes, pollo y otras aves</a></li>
+<li id="menu-item-20160" class="nav-pescado menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20160"><a href="https://www.#/todas/recetas/pescados-mariscos/">Pescado y marisco</a></li>
+<li id="menu-item-20162" class="nav-verduras menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20162"><a href="https://www.#/todas/recetas/ensaladas-verduras/">Ensaladas y verduras</a></li>
+<li id="menu-item-20164" class="nav-sopas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20164"><a href="https://www.#/todas/recetas/legumbres-sopas-guisos/">Legumbres y guisos</a></li>
+<li id="menu-item-43556" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-43556"><a href="https://www.#/todas/recetas/recetas-de-sopas-y-caldos/">Sopas, caldos y cremas</a></li>
+<li id="menu-item-20166" class="nav-masas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20166"><a href="https://www.#/todas/recetas/masas-rebozados/">Panes, masas y rebozados</a></li>
+<li id="menu-item-20167" class="nav-patatas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20167"><a href="https://www.#/todas/recetas/patatas-salsas-guarniciones/">Patatas, salsas y guarniciones</a></li>
+<li id="menu-item-20163" class="nav-tapas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20163"><a href="https://www.#/todas/recetas/tapas-aperitivos-pinchos/">Tapas y aperitivos</a></li>
+<li id="menu-item-20171" class="nav-bebidas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20171"><a href="https://www.#/todas/recetas/bebidas-cocteles-licores/">Bebidas, cócteles y licores</a></li>
+<li id="menu-item-20165" class="nav-especial menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-20165"><a href="https://www.#/todas/recetas/ocasiones-especiales/">Para ocasiones especiales</a></li>
+<li id="menu-item-20174" class="nav-tematicas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20174"><a href="https://www.#/todas/recetas-tematicas/">Recetas por temática</a></li>
+<li id="menu-item-20169" class="nav-facil menu-item menu-item-type-post_type menu-item-object-page menu-item-20169"><a href="https://www.#/recetas-faciles/">Recetas fáciles</a></li>
+<li id="menu-item-20956" class="nav-comohacer menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20956"><a href="https://www.#/todas/como-hacer/">Cómo hacer&#8230;</a></li>
+</ul></div></div><div id="nav_menu-4" class="widget widget_nav_menu"><h3 class="widget-title">Aprende a cocinar</h3><div class="menu-aprende-container"><ul id="menu-aprende" class="menu"><li id="menu-item-27900" class="nav-trucos menu-item menu-item-type-taxonomy menu-item-object-category menu-item-27900"><a href="https://www.#/todas/trucos-de-cocina/">Cursos de cocina</a></li>
+<li id="menu-item-27901" class="nav-descargas menu-item menu-item-type-taxonomy menu-item-object-category menu-item-27901"><a href="https://www.#/todas/trucos-de-cocina/recetarios-gratis-descargar/">Imprimibles</a></li>
+<li id="menu-item-27902" class="nav-verduras menu-item menu-item-type-taxonomy menu-item-object-category menu-item-27902"><a href="https://www.#/todas/trucos-de-cocina/ingredientes-alimentos/">Ingredientes y alimentos</a></li>
+<li id="menu-item-28951" class="nav-facil menu-item menu-item-type-taxonomy menu-item-object-category menu-item-28951"><a href="https://www.#/todas/trucos-de-cocina/guias-de-compra-de-menaje/">Utensilios y menaje de cocina</a></li>
+<li id="menu-item-27905" class="nav-indice menu-item menu-item-type-post_type menu-item-object-page menu-item-27905"><a href="https://www.#/calendario-de-temporada/">Productos de temporada</a></li>
+</ul></div></div><div id="nav_menu-5" class="widget widget_nav_menu"><h3 class="widget-title">Cultura gastronómica</h3><div class="menu-general-container"><ul id="menu-general" class="menu"><li id="menu-item-27903" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-27903"><a href="https://www.#/todas/general/">Actualidad gastronómica</a></li>
+<li id="menu-item-27904" class="nav-libros menu-item menu-item-type-taxonomy menu-item-object-category menu-item-27904"><a href="https://www.#/todas/libros-de-cocina-y-recetarios/">Libros de cocina</a></li>
+</ul></div></div><div id="media_image-7" class="widget widget_media_image"><a href="https://www.pasta-garofalo.com/es/?utm_source=derechupete&#038;utm_medium=display&#038;utm_campaign=anuncio&#038;utm_content=branding"><img width="300" height="150" src="2021/04/GA_300x150-0421.jpg" class="image wp-image-40017  attachment-full size-full" alt="Pasta Garófalo" loading="lazy" style="max-width: 100%; height: auto;" /></a></div><div id="media_image-5" class="widget widget_media_image"><a href="https://www.arrozsos.es/?utm_source=derechupete&#038;utm_medium=display&#038;utm_campaign=anuncio&#038;utm_content=branding"><img width="300" height="150" src="2018/05/SOS_MejoresRecetas_300x150.gif" class="image wp-image-21592  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;" /></a></div><div id="media_image-2" class="widget widget_media_image"><a href="http://www.galiciacalidade.gal/"><img width="300" height="150" src="2016/09/GaliciaCalidadePremiosVino_Banner_300x150castellano.gif" class="image wp-image-17532  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;" /></a></div><div id="media_image-9" class="widget widget_media_image"><a href="https://www.eggo.es/"><img width="300" height="150" src="2021/06/banner-branding-300x150-recetas-de-rechupete.gif" class="image wp-image-41630  attachment-full size-full" alt="Eggo cocinas" loading="lazy" style="max-width: 100%; height: auto;" /></a></div>    
+</div>
+</aside></div>
+
+<aside>
+  <div id="aboutmod" class="rdr-content pure-g rdr-double-top">
+    		<div class="pure-u-1 pure-u-lg-1-3">
+			<div id="nav_menu-6" class="widget widget_nav_menu"><h3 class="widget-title">Las mejores recetas</h3><div class="menu-modulos-mejores-recetas-container"><ul id="menu-modulos-mejores-recetas" class="menu"><li id="menu-item-33614" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-33614"><a href="https://www.#/receta-de-albondigas-en-salsa/15542/">Albóndigas en salsa</a></li>
+<li id="menu-item-33615" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-33615"><a href="https://www.#/como-preparar-churros-caseros-receta-paso-a-paso/9752/">Cómo hacer churros</a></li>
+<li id="menu-item-33616" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-33616"><a href="https://www.#/como-preparar-cordero-al-horno-o-asado-receta-facil/8629/">Cordero al horno o asado</a></li>
+<li id="menu-item-33617" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-33617"><a href="https://www.#/receta-de-abuela-guiso-de-ternera-con-patatas/1336/">Estofado de ternera</a></li>
+<li id="menu-item-33618" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-33618"><a href="https://www.#/como-hacer-guacamole-mexicano-receta-facil-y-rapida/9261/">Guacamole mexicano fácil</a></li>
+<li id="menu-item-33619" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-33619"><a href="https://www.#/receta-de-lasana-de-carne/223/">Lasaña de carne</a></li>
+<li id="menu-item-33621" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-33621"><a href="https://www.#/como-preparar-receta-masa-pizza-italiana/1728/">Masa de pizza italiana</a></li>
+<li id="menu-item-33622" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-33622"><a href="https://www.#/pollo-al-curry-con-arroz-basmati-receta-paso-a-paso/8199/">Pollo al curry</a></li>
+<li id="menu-item-33636" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-33636"><a href="https://www.#/fideua-con-marisco/13578/">Fideuá de marisco y pescado</a></li>
+</ul></div></div>	  	</div>
+	  	<div class="pure-u-1 pure-u-lg-1-3">
+			<div id="nav_menu-7" class="widget widget_nav_menu"><h3 class="widget-title">De temporada</h3><div class="menu-modulos-de-temporada-container"><ul id="menu-modulos-de-temporada" class="menu"><li id="menu-item-42984" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-42984"><a href="https://www.#/como-preparar-el-mejor-pure-de-patata/14328/">Puré de patata casero y fácil</a></li>
+<li id="menu-item-42985" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-42985"><a href="https://www.#/como-preparar-magdalenas-caseras-receta-paso-a-paso/7789/">Magdalenas caseras</a></li>
+<li id="menu-item-42986" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-42986"><a href="https://www.#/receta-de-fabada-o-fabes-asturianas/982/">Fabada asturiana tradicional</a></li>
+<li id="menu-item-42988" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-42988"><a href="https://www.#/como-preparar-cordero-al-horno-o-asado-receta-facil/8629/">Cordero al horno</a></li>
+<li id="menu-item-42987" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-42987"><a href="https://www.#/patatas-asadas-o-al-horno-con-especias/11870/">Patatas asadas caseras</a></li>
+<li id="menu-item-42990" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-42990"><a href="https://www.#/risotto-de-setas/11575/">Risotto de setas</a></li>
+<li id="menu-item-33657" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-33657"><a href="https://www.#/como-hacer-un-mojito-cubano-perfecto/16486/">Cómo hacer el mojito perfecto</a></li>
+<li id="menu-item-43024" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-43024"><a href="https://www.#/receta-facil-de-tarta-de-queso/158/">Tarta de queso</a></li>
+<li id="menu-item-43025" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-43025"><a href="https://www.#/flan-de-quesitos-flan-sin-horno-facil-delicioso-y-barato/42871/">Flan de quesitos</a></li>
+</ul></div></div>	  	</div>
+	  	<div class="pure-u-1 pure-u-lg-1-3">
+			<div id="nav_menu-8" class="widget widget_nav_menu"><h3 class="widget-title">Recetas baratas</h3><div class="menu-modulos-top-recetas-baratas-container"><ul id="menu-modulos-top-recetas-baratas" class="menu"><li id="menu-item-33625" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-33625"><a href="https://www.#/pollo-asado-facil-al-horno-con-patatas-panaderas/9535/">Pollo asado fácil</a></li>
+<li id="menu-item-33627" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-33627"><a href="https://www.#/tortilla-de-patatas-espanola-receta-paso-a-paso/5182/">Tortilla de patatas</a></li>
+<li id="menu-item-33628" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-33628"><a href="https://www.#/receta-de-lentejas-caseras-con-chorizo/939/">Lentejas con chorizo</a></li>
+<li id="menu-item-43023" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-43023"><a href="https://www.#/empanada-de-bonito-en-conserva/23074/">Empanada de atún</a></li>
+<li id="menu-item-33630" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-33630"><a href="https://www.#/receta-de-arroz-con-pollo-y-verduras/581/">Arroz con pollo</a></li>
+<li id="menu-item-33623" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-33623"><a href="https://www.#/bizcocho-casero-de-yogur/10463/">Bizcocho de yogurt</a></li>
+<li id="menu-item-33624" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-33624"><a href="https://www.#/receta-de-brownies-de-chocolate-con-nueces-forma-clasica-y-facil/1220/">Brownie de chocolate</a></li>
+<li id="menu-item-33626" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-33626"><a href="https://www.#/receta-de-tortitas/11/">Tortitas o pancakes caseros</a></li>
+<li id="menu-item-33629" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-33629"><a href="https://www.#/receta-de-humus-y-tahini-pure-de-garbanzos/3864/">Hummus o crema de garbanzos</a></li>
+</ul></div></div>	  	</div>
+      </div>
+</aside>
+
+<footer>
+  <div id="socialchannels">
+    <style>
+	#socialchannels ul {margin:0}
+	#socialchannels li {text-align:center;font-size:2em;line-height:100%;}
+	#socialchannels li a{color:#FFF;text-decoration:none;display:inline-block;width:100%;padding:0.5em 0;}
+	#socialchannels li a:hover{color:rgba(255,255,255,0.6);text-decoration:none;}
+	#socialchannels li a span {display:block; font-size:0.4em;line-height:100%;}
+
+	#facebookchannel{background-color:#3b5998}
+	#twitterchannel{background-color:#33BCEF}
+	#youtubechannel{background-color:#cc181e}
+	#pinterestchannel{background-color:#cb2027}
+	#instagramchannel{background-color:#517fa4}
+	#mailchannel{background-color:#87A8C9}
+
+</style>
+    <ul class="pure-g">
+      <li id="facebookchannel" class="pure-u-1-3 pure-u-lg-1-6"><a href="https://www.facebook.com/recetasderechupetefanpage" rel="nofollow" title="Recetas de Rechupete en Facebook" target="_blank"><i class="icon-facebook"></i><span>830.000</span></a></li>
+      <li id="twitterchannel" class="pure-u-1-3 pure-u-lg-1-6"><a href="https://twitter.com/derechupete" rel="nofollow" title="Recetas de Rechupete en Twitter" target="_blank"><i class="icon-twitter"></i><span>213.000</span></a></li>
+      <li id="youtubechannel" class="pure-u-1-3 pure-u-lg-1-6"><a href="https://www.youtube.com/user/recetasderechupete?sub_confirmation=1" rel="nofollow" title="Recetas de Rechupete en Youtube" target="_blank"><i class="icon-youtube"></i><span>94.000</span></a></li>
+      <li id="instagramchannel" class="pure-u-1-3 pure-u-lg-1-6"><a href="https://instagram.com/derechupete/" rel="nofollow" title="Recetas de Rechupete en Instagram" target="_blank"><i class="icon-instagram"></i><span>78.000</span></a></li>
+      <li id="pinterestchannel" class="pure-u-1-3 pure-u-lg-1-6"><a href="https://www.pinterest.es/derechupete/" rel="nofollow" title="Recetas de Rechupete en Pinterest" target="_blank"><i class="icon-pinterest"></i><span>28.000</span></a></li>
+      <li id="mailchannel" class="pure-u-1-3 pure-u-lg-1-6"><a href="https://eepurl.com/7kyp5" rel="nofollow" title="Suscríbete por mail" target="_blank"><i class="icon-mail"></i><span>23.000</span></a></li>
+    </ul>
+  </div>
+  <div id="closepage" role="contentinfo">
+	  <p>&copy; 2009-2021 Recetas de rechupete - Todos los derechos reservados <a href="https://www.#/terminos-de-uso/">Términos de uso</a> · <a href="https://www.#/politica-de-cookies/">Política de privacidad</a> · <a href="https://www.#/politica-de-cookies-2/">Política de cookies</a> <br />
+      Diseñado por <a href="https://www.piensaenpixels.com/" target="_blank" rel="nofollow">PIENSA en PIXELS</a> · <a href="https://www.stackscale.com/es/" title="Cloud hosting con StackScale" target="_blank">Cloud hosting con StackScale</a></p>
+  </div>
+</footer>
+
+<style>.aawp .aawp-product--horizontal .aawp-product__description { display: block; }</style>
+        <script type='text/javascript' id='rating-form-js-js-extra'>
+/* <![CDATA[ */
+var rating_form_script = {"ajaxurl":"https:\/\/www.#\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='rating-form/assets/js/front.js@ver=1.5.9' id='rating-form-js-js'></script>
+<script type='text/javascript' src='marfeelpress/includes/base/src/resources/js/resizer.js@ver=5.8.1' id='mrf_resizer-js'></script>
+<script type='text/javascript' src='aawp/assets/dist/js/main.js@ver=3.16' id='aawp-js'></script>
+<script type='text/javascript' src='wp-embed.min.js@ver=5.8.1' id='wp-embed-js'></script>
+
+</body></html>
